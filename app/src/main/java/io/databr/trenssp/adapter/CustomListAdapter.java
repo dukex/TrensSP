@@ -54,11 +54,16 @@ public class CustomListAdapter extends BaseAdapter {
 
         TextView title = (TextView) convertView.findViewById(R.id.title);
         TextView number = (TextView) convertView.findViewById(R.id.number);
+        TextView lastStatus = (TextView) convertView.findViewById(R.id.lastStatus);
+        TextView updatedAt = (TextView) convertView.findViewById(R.id.updatedAt);
 
         Line l = lineItems.get(position);
+
         title.setText(l.getName());
         number.setText(l.getNumber());
         number.setBackgroundColor(l.getHexColor());
+        lastStatus.setText(l.getLastTextStatus());
+        updatedAt.setText(l.getLastUpdatedAt());
 
         return convertView;
     }

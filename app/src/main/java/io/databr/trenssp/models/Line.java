@@ -1,28 +1,20 @@
 package io.databr.trenssp.models;
 
 import android.graphics.Color;
+import android.text.format.DateUtils;
 
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Line {
-    private String name, updatedAt, id;
+    private String name, updatedAt;
     private int number;
     private LineStatus lastStatus;
     private LineColor color;
 
     public Line() {
-    }
-
-    public Line(String id, String name, String updatedAt, LineStatus status, int number) {
-
-        this.id = id;
-        this.name = name;
-        this.updatedAt = updatedAt;
-        this.lastStatus = status;
-        this.number = number;
-
     }
 
     public String getName() { return name;  }
@@ -38,5 +30,18 @@ public class Line {
     public int getHexColor() {
         return Color.parseColor(color.getHex());
     }
+
+    public String getLastTextStatus() {
+        return lastStatus.getMessage();
+    }
+
+    public void setLastStatus(LineStatus status) {
+        this.lastStatus = status;
+    }
+
+    public String getLastUpdatedAt() {
+       return DateUtils.getRelativeTimeSpanString(lastStatus.getUpdatedAt().getTime()).toString();
+    }
+
 }
 

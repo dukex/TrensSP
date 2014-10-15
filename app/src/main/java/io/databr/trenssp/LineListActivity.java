@@ -18,12 +18,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
 import io.databr.trenssp.adapter.CustomListAdapter;
 import io.databr.trenssp.models.Line;
 import io.databr.trenssp.models.LineColor;
+import io.databr.trenssp.models.LineStatus;
 
 public class LineListActivity extends Activity {
     private static String TAG = LineListActivity.class.getSimpleName();
@@ -82,10 +84,17 @@ public class LineListActivity extends Activity {
                                     line.setColor(color);
                                 }
 
+                                JSONObject statusObj = obj.getJSONObject("status");
+                                if (statusObj != null) {
+                                    LineStatus status = new LineStatus(statusObj.getString("message"), statusObj.getString("updated_at"));
+                                    line.setLastStatus(status);
+                                }
 
                                 lineList.add(line);
 
                             } catch (JSONException e) {
+                                e.printStackTrace();
+                            } catch (ParseException e) {
                                 e.printStackTrace();
                             }
 
