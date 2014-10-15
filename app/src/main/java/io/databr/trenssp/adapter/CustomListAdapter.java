@@ -1,5 +1,6 @@
 package io.databr.trenssp.adapter;
 
+import java.text.ParseException;
 import java.util.List;
 
 import android.app.Activity;
@@ -10,15 +11,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.NetworkImageView;
-
-import io.databr.trenssp.AppController;
 import io.databr.trenssp.R;
 import io.databr.trenssp.models.Line;
 
+
 public class CustomListAdapter extends BaseAdapter {
-    private Activity activity;
+    protected Activity activity;
     private LayoutInflater inflater;
     private List<Line> lineItems;
 
@@ -61,11 +59,15 @@ public class CustomListAdapter extends BaseAdapter {
 
         title.setText(l.getName());
         number.setText(l.getNumber());
-        number.setBackgroundColor(l.getHexColor());
-        lastStatus.setText(l.getLastTextStatus());
-        updatedAt.setText(l.getLastUpdatedAt());
+        number.setBackgroundColor(l.getColor().getHex());
+        lastStatus.setText(l.getStatus().getMessage());
+
+        try {
+            updatedAt.setText("Atualizado ".concat(l.getStatus().getUpdatedAgo()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         return convertView;
     }
-
 }
