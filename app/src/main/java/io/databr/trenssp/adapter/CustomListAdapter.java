@@ -48,13 +48,17 @@ public class CustomListAdapter extends BaseAdapter {
         if (inflater == null)
             inflater = (LayoutInflater) activity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
         if (convertView == null)
             convertView = inflater.inflate(R.layout.list_row, null);
 
         TextView title = (TextView) convertView.findViewById(R.id.title);
+        TextView number = (TextView) convertView.findViewById(R.id.number);
 
         Line l = lineItems.get(position);
         title.setText(l.getName());
+        number.setText(l.getNumber());
+        number.setBackgroundColor(l.getHexColor());
 
         return convertView;
     }

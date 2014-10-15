@@ -22,6 +22,7 @@ public class Line {
         this.updatedAt = updatedAt;
         this.lastStatus = status;
         this.number = number;
+
     }
 
     public String getName() { return name;  }
@@ -34,8 +35,8 @@ public class Line {
         this.color = color;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public int getHexColor() {
+        return Color.parseColor(color.getHex());
     }
 }
 
