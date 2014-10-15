@@ -1,5 +1,7 @@
 package io.databr.trenssp.models;
 
+import android.graphics.Color;
+
 /**
  * Created by duke on 10/14/14.
  */
@@ -9,15 +11,7 @@ public class LineColor {
     public LineColor() {
     }
 
-    public LineColor(String hex) {
-        this.hex = hex;
-    }
-
-    public String getHex() {
-        return hex;
-    }
-
-    public void setHex(String hex) {
-        this.hex = hex;
+    public int getHex() {
+        return Color.parseColor(hex);
     }
 }
