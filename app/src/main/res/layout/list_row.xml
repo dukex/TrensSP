@@ -13,8 +13,9 @@
         android:layout_marginRight="8dp"
         android:textSize="@dimen/number"
         android:gravity="center"
-        android:text="12"
-        android:textColor="@color/list_row_number_color" />
+        android:text="@string/line_number_example"
+        android:textColor="@color/list_row_number_color"
+        android:background="#ff939395" />
 
     <TextView
         android:id="@+id/title"
@@ -24,7 +25,7 @@
         android:textSize="@dimen/title"
         android:textStyle="bold"
         android:gravity="center"
-        android:text="Linha 2 - Azul"
+        android:text="@string/line_title_example"
          />
 
     <TextView
@@ -34,7 +35,7 @@
         android:layout_toRightOf="@+id/lastStatus"
         android:textSize="@dimen/updatedAt"
         android:gravity="right"
-        android:text="25/89/788"
+        android:text="@string/line_updated_at_example"
         android:layout_alignBottom="@+id/number"
         android:layout_alignParentRight="true"
         android:textStyle="italic" />
@@ -46,6 +47,6 @@
         android:layout_toRightOf="@+id/number"
         android:textSize="@dimen/lastStatus"
         android:gravity="center"
-        android:text="Operação Normal"
+        android:text="@string/line_last_status_example"
         android:layout_alignBottom="@+id/number" />
 </RelativeLayout>

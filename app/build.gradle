@@ -5,7 +5,7 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "databr.io.trenssp"
+        applicationId "io.databr.trenssp"
         minSdkVersion 14
         targetSdkVersion 20
         versionCode 1

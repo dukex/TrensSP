@@ -2,6 +2,9 @@
 <resources>
 
     <string name="app_name">Trens SP</string>
-    <string name="title_line_detail">Line Detail</string>
+    <string name="line_updated_at_example">1 ano atrás</string>
+    <string name="line_last_status_example">Operação XXX</string>
+    <string name="line_title_example">Linha XX - Cor</string>
+    <string name="line_number_example">00</string>
 
 </resources>
