@@ -7,12 +7,14 @@
 
     <TextView
         android:id="@+id/number"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_marginRight="8dp"
         android:textSize="@dimen/number"
-        android:textStyle="bold" />
+        android:gravity="center"
+        android:text="12"
+        android:textColor="@color/list_row_number_color" />
 
     <TextView
         android:id="@+id/title"
@@ -21,6 +23,7 @@
         android:layout_alignTop="@+id/number"
         android:layout_toRightOf="@+id/number"
         android:textSize="@dimen/title"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:text="Linha 2 - Azul" />
 
 </RelativeLayout>
