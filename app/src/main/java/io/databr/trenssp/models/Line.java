@@ -1,11 +1,16 @@
 package io.databr.trenssp.models;
 
+import android.graphics.Color;
+
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class Line {
     private String name, updatedAt, id;
     private int number;
     private LineStatus lastStatus;
+    private LineColor color;
 
     public Line() {
     }
@@ -19,8 +24,14 @@ public class Line {
         this.number = number;
     }
 
-    public String getName() {
-        return name;
+    public String getName() { return name;  }
+    public void setName(String name) { this.name = name; }
+
+    public String getNumber() { return Integer.toString(number); }
+    public void setNumber(int number) { this.number = number; }
+
+    public void setColor(LineColor color) {
+        this.color = color;
     }
 
     public void setName(String name) {

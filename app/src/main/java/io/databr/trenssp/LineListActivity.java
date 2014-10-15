@@ -23,6 +23,7 @@ import java.util.List;
 
 import io.databr.trenssp.adapter.CustomListAdapter;
 import io.databr.trenssp.models.Line;
+import io.databr.trenssp.models.LineColor;
 
 public class LineListActivity extends Activity {
     private static String TAG = LineListActivity.class.getSimpleName();
@@ -73,6 +74,15 @@ public class LineListActivity extends Activity {
                                 JSONObject obj = linesItems.getJSONObject(i);
                                 Line line = new Line();
                                 line.setName(obj.getString("name"));
+                                line.setNumber(obj.getInt("number"));
+
+                                JSONObject colorObj = obj.getJSONObject("color");
+                                if (colorObj != null) {
+                                    LineColor color = new LineColor(colorObj.getString("hex"));
+                                    line.setColor(color);
+                                }
+
+
                                 lineList.add(line);
 
                             } catch (JSONException e) {
