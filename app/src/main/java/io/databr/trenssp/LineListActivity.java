@@ -44,8 +44,7 @@ public class LineListActivity extends Activity {
         listView.setAdapter(adapter);
 
         pDialog = new ProgressDialog(this);
-        // Showing progress dialog before making http request
-        pDialog.setMessage("Loading...");
+        pDialog.setMessage("Carregando...");
         pDialog.show();
 
         // changing action bar color
