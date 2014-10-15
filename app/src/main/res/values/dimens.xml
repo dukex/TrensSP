@@ -4,6 +4,6 @@
     <dimen name="number">17dp</dimen>
     <dimen name="title">17dp</dimen>
     <dimen name="lastStatus">12dp</dimen>
-    <dimen name="updatedAt">6dp</dimen>
+    <dimen name="updatedAt">7dp</dimen>
 
 </resources>

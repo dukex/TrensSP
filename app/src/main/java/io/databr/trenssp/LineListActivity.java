@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -54,7 +55,8 @@ public class LineListActivity extends Activity {
          service.listLines(new Callback<LinesResponse>() {
                 @Override
                 public void success(LinesResponse linesResponse, retrofit.client.Response response) {
-                    Collection<Line> lines = linesResponse.getLines();
+                    List<Line> lines = linesResponse.getLines();
+                    Collections.reverse(lines);
 
                     for (Line line : lines) lineList.add(line);
 
