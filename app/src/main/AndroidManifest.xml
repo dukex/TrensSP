@@ -27,14 +27,13 @@
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         <!--</activity>-->
-        <!--<activity-->
-            <!--android:name=".LineDetailActivity"-->
-            <!--android:label="@string/title_line_detail"-->
-            <!--android:parentActivityName=".LineListActivity" >-->
+        <activity
+            android:name=".LineDetailsActivity"
+            android:parentActivityName=".LineListActivity" >
             <!--<meta-data-->
                 <!--android:name="android.support.PARENT_ACTIVITY"-->
                 <!--android:value=".LineListActivity" />-->
-        <!--</activity>-->
+        </activity>
 
     </application>
 
