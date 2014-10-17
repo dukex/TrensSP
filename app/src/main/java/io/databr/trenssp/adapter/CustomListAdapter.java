@@ -50,7 +50,7 @@ public class CustomListAdapter extends BaseAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         if (convertView == null)
-            convertView = inflater.inflate(R.layout.list_row, null);
+            convertView = inflater.inflate(R.layout.line_list_row, null);
 
         TextView title = (TextView) convertView.findViewById(R.id.title);
         TextView number = (TextView) convertView.findViewById(R.id.number);
