@@ -16,19 +16,32 @@ import java.util.TimeZone;
 
 public class LineStatus implements Serializable {
     @SerializedName("updated_at") private String updatedAt;
+    @SerializedName("created_at") private String createdAt;
+
 
     private String message;
+    private String createdAtAgo;
 
     public String getMessage() {
         return message;
     }
 
     public String getUpdatedAgo() throws ParseException {
+        return ago(updatedAt);
+    }
+
+    public String getCreatedAtAgo() throws ParseException {
+        return ago(createdAt);
+    }
+
+    private String ago(String d) throws ParseException {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
         format.setTimeZone(TimeZone.getTimeZone("America/SaoPaulo"));
-        Date updatedAtDate = format.parse(updatedAt);
+        Date date = format.parse(d);
 
-        return DateUtils.getRelativeTimeSpanString(updatedAtDate.getTime()).toString();
+        return DateUtils.getRelativeTimeSpanString(date.getTime()).toString();
+
     }
+
 }

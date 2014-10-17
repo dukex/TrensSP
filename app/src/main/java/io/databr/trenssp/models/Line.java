@@ -7,6 +7,7 @@ public class Line implements Serializable {
     private int number;
     private LineStatus status;
     private LineColor color;
+    private String id;
 
     public String getName() { return name;  }
 
@@ -18,5 +19,9 @@ public class Line implements Serializable {
 
     public LineColor getColor() {
         return color;
+    }
+
+    public String getId() {
+        return id;
     }
 }

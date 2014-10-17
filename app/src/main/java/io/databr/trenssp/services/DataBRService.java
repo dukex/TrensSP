@@ -12,6 +12,6 @@ public interface DataBRService {
     @GET("/v1/states/sp/transports/trains/lines")
     void listLines(Callback<LinesResponse> cb);
 
-    @GET("/v1/states/sp/transports/trains/lines/{line}")
-    LineResponse getLine(@Path("line") String lineUri);
+    @GET("/v1/states/sp/transports/trains/lines/{line}/statuses")
+    void getLineStatuses(@Path("line") String lineUri, Callback<StatusesResponse> cb);
 }
