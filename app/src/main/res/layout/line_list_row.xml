@@ -26,7 +26,7 @@
         android:textStyle="bold"
         android:gravity="center"
         android:text="@string/line_title_example"
-         />
+        android:textColor="#ff000000" />
 
     <TextView
         android:id="@+id/updatedAt"
