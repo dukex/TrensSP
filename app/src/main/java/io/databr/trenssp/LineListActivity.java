@@ -37,11 +37,8 @@ public class LineListActivity extends ListActivity {
 
         ListView listView = getListView();
 
-
         adapter = new CustomListAdapter(this, lineList);
         listView.setAdapter(adapter);
-
-        Log.d("A", lineList.toString());
 
         loadData("Carregando...");
     }
@@ -54,8 +51,10 @@ public class LineListActivity extends ListActivity {
 
   //  @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
-       // final Line item = lineList.get(position);
-        startActivity(new Intent(this, LineDetailsActivity.class));
+        Intent i = new Intent(this, LineDetailsActivity.class);
+        i.putExtra("list", lineList.get(position));
+
+        startActivity(i);
     }
 
     private void hidePDialog() {

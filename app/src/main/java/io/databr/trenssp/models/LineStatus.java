@@ -4,6 +4,7 @@ import android.text.format.DateUtils;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,7 +14,7 @@ import java.util.TimeZone;
  * Created by duke on 10/14/14.
 */
 
-public class LineStatus {
+public class LineStatus implements Serializable {
     @SerializedName("updated_at") private String updatedAt;
 
     private String message;
